@@ -5,6 +5,7 @@ import { TemplateModule } from './template/template.module'
 import { NcguiasComponent } from './ncguias/ncguias/ncguias.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {MatSelectModule} from '@angular/material/select';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     TemplateModule,
     BrowserAnimationsModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    MatSelectModule
   ],
   exports: [RouterModule
     , TemplateModule,
@@ -32,7 +34,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     TemplateModule,
     BrowserAnimationsModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    MatSelectModule
   ]
 })
 export class AppRoutingModule { }
