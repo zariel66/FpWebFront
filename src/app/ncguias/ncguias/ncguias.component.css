@@ -9,3 +9,13 @@
     transition: 500ms;
     background-color: lightskyblue;
 }
+
+
+.card-header-format
+{
+    margin-left: -1rem;
+    margin-right: -1rem;
+    font-size: 18px;
+    color:white;
+    background-color: #7187d6;
+}
