@@ -1,27 +1,25 @@
-#contenedor
-{
+#contenedor {
     padding: 0;
     margin: 0;
 }
 
-.menu-item:hover
-{
+.menu-item:hover {
     transition: 500ms;
     background-color: lightskyblue;
 }
 
-
-.card-header-format
-{
+.card-header-format {
     margin-left: -1rem;
     margin-right: -1rem;
     font-size: 18px;
-    color:white;
+    color: white;
     background-color: #7187d6;
 }
 
-.seccion-controles
-{
+.seccion-controles {
     margin-bottom: 35px;
 }
 
+mat-select {
+    width: 150% !important;
+}

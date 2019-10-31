@@ -65,9 +65,9 @@
         <div class="col-sm-12 ">
           <div class="card-header card-header-format">Datos Asiento de Diario</div>
           <div class="form-group row shadow p-5 border ">
-            <div class="input-group col-sm-4">
+            <div class="input-group col-sm-3">
               <mat-form-field>
-                <mat-label>Cuentas por Pagar</mat-label>
+                <mat-label>Cuenta por Pagar</mat-label>
                 <mat-select>
                   <mat-option *ngFor="let cxp of cxps" [value]="cxp.value">
                     {{cxp.viewValue}}
@@ -75,10 +75,23 @@
                 </mat-select>
               </mat-form-field>
             </div>
-
+            <div class="input-group col-sm-3">
+                
+            </div>
+            <div class="input-group col-sm-3">
+              <mat-form-field>
+                <mat-label>Cuenta por Cobrar</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let cxc of cxcs" [value]="cxc.value">
+                    {{cxc.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
           </div>
         </div>
       </div>
+      
     </div>
     <div class="col-sm-1">
 
