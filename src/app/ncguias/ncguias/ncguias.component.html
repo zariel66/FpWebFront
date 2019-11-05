@@ -76,7 +76,17 @@
               </mat-form-field>
             </div>
             <div class="input-group col-sm-3">
-                
+              <mat-form-field class="input-search-control">
+                <input type="text" placeholder="Centro de Costo" matInput [formControl]="buscadorCXP"
+                  [matAutocomplete]="auto">
+              </mat-form-field>
+
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptionsCXP | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+
             </div>
             <div class="input-group col-sm-3">
               <mat-form-field>
@@ -88,10 +98,43 @@
                 </mat-select>
               </mat-form-field>
             </div>
+            <div class="input-group col-sm-3">
+              <mat-form-field class="input-search-control">
+                <input type="text" placeholder="Centro de Costo" matInput [formControl]="buscadorCXC"
+                  [matAutocomplete]="auto2">
+              </mat-form-field>
+
+              <mat-autocomplete #auto2="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptionsCXC | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+
+            </div>
           </div>
         </div>
       </div>
-      
+      <div class="row seccion-controles">
+        <div class="col-sm-12 ">
+          <div class="card-header card-header-format">Detalles anulación</div>
+          <div class="form-group row shadow p-5 border ">
+            <div class="input-group col-sm-3">
+              <mat-form-field>
+                <mat-label>Cuenta por Pagar</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let cxp of cxps" [value]="cxp.value">
+                    {{cxp.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-group col-sm-3">
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-sm-1">
 

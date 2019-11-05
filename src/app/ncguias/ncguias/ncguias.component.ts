@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 export interface CxP {
   value: string;
   viewValue: string;
@@ -17,6 +19,14 @@ export interface CxC {
 })
 export class NcguiasComponent implements OnInit {
 
+  buscadorCXP = new FormControl();
+  optionsCXP: string[] = ['ADM-GYE-01', 'ADM-GYE-02', 'ADM-GYE-03'];
+  filteredOptionsCXP: Observable<string[]>;
+
+  buscadorCXC = new FormControl();
+  optionsCXC: string[] = ['CAS-001003-01'];
+  filteredOptionsCXC: Observable<string[]>;
+
 
   cxps: CxP[] = [
     {value: '41101', viewValue: '41101 - Flete Prepagado'},
@@ -32,6 +42,28 @@ export class NcguiasComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.filteredOptionsCXP = this.buscadorCXP.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filterCXP(value))
+      );
+      this.filteredOptionsCXC = this.buscadorCXC.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filterCXC(value))
+      );
+  }
+
+  private _filterCXP(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.optionsCXP.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  private _filterCXC(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.optionsCXC.filter(option => option.toLowerCase().includes(filterValue));
   }
 
 }

@@ -5,8 +5,9 @@ import { TemplateModule } from './template/template.module'
 import { NcguiasComponent } from './ncguias/ncguias/ncguias.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 const routes: Routes = [
   {
@@ -26,7 +27,10 @@ const routes: Routes = [
     TemplateModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    MatSelectModule
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule
   ],
   exports: [RouterModule
     , TemplateModule,
@@ -35,7 +39,10 @@ const routes: Routes = [
     TemplateModule,
     BrowserAnimationsModule,
     BsDatepickerModule,
-    MatSelectModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule
   ]
 })
 export class AppRoutingModule { }
